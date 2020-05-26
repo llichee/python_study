@@ -12,12 +12,11 @@ def main():
 
     #等待客户端的链接
     client_socket, clientAddr = tcp_socket.accept()
-
     print(clientAddr)
 
     #接收客户端发送过来的请求
     recv_data = client_socket.recv(1024)
-    print(recv_data)
+    print(recv_data.decode("utf-8"))
 
     client_socket.send("INFO:ending...".encode("utf-8"))
 
